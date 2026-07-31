@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * DANH SÁCH ĐỀ TÀI - PHIÊN BẢN CÔNG KHAI
  * Hiển thị tất cả đề tài đã duyệt của tất cả giảng viên
@@ -512,7 +512,8 @@ function buildFilterUrl($newParams = [])
                             <i class="bi bi-bell"></i> Thông báo
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="thong_bao_do_an.php"><i class="bi bi-bell me-2"></i>Thông báo đồ án</a></li>
+                            <li><a class="dropdown-item" href="thong_bao_do_an.php"><i class="bi bi-bell me-2"></i>Thông
+                                    báo đồ án</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -520,11 +521,14 @@ function buildFilterUrl($newParams = [])
                             <i class="bi bi-search"></i> Tra cứu
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="khoa_cntt.php"><i class="bi bi-person-badge me-2"></i>Khoa Công nghệ thông tin</a></li>
-                            <li><a class="dropdown-item" href="danh_sach_de_tai_cong_khai.php"><i class="bi bi-journal-text me-2"></i>Danh sách đề tài</a></li>
+                            <li><a class="dropdown-item" href="khoa_cntt.php"><i
+                                        class="bi bi-person-badge me-2"></i>Khoa Công nghệ thông tin</a></li>
+                            <li><a class="dropdown-item" href="danh_sach_de_tai_cong_khai.php"><i
+                                        class="bi bi-journal-text me-2"></i>Danh sách đề tài</a></li>
                             <?php $menuLinks = getMenuLinks(); ?>
                             <?php if (!empty($menuLinks['ket_qua_thi'])): ?>
-                                <li><a class="dropdown-item" href="<?= $menuLinks['ket_qua_thi'] ?>" target="_blank"><i class="bi bi-file-earmark-text me-2"></i>Kết quả thi</a></li>
+                                <li><a class="dropdown-item" href="<?= $menuLinks['ket_qua_thi'] ?>" target="_blank"><i
+                                            class="bi bi-file-earmark-text me-2"></i>Kết quả thi</a></li>
                             <?php endif; ?>
                         </ul>
                     </li>
@@ -533,9 +537,12 @@ function buildFilterUrl($newParams = [])
                             <i class="bi bi-info-circle"></i> Giới thiệu
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="gioi_thieu_sinh_vien.php"><i class="bi bi-mortarboard me-2"></i>Sinh viên</a></li>
-                            <li><a class="dropdown-item" href="gioi_thieu_giang_vien.php"><i class="bi bi-person-badge me-2"></i>Giảng viên</a></li>
-                            <li><a class="dropdown-item" href="gioi_thieu_lanh_dao.php"><i class="bi bi-shield-lock me-2"></i>Lãnh đạo</a></li>
+                            <li><a class="dropdown-item" href="gioi_thieu_sinh_vien.php"><i
+                                        class="bi bi-mortarboard me-2"></i>Sinh viên</a></li>
+                            <li><a class="dropdown-item" href="gioi_thieu_giang_vien.php"><i
+                                        class="bi bi-person-badge me-2"></i>Giảng viên</a></li>
+                            <li><a class="dropdown-item" href="gioi_thieu_lanh_dao.php"><i
+                                        class="bi bi-shield-lock me-2"></i>Lãnh đạo</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -543,8 +550,14 @@ function buildFilterUrl($newParams = [])
                             <i class="bi bi-people"></i> Biểu mẫu
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="https://drive.google.com/drive/folders/1mSIO416XjD_t_J3RVunTQWK2qB4kRvNn" target="_blank"><i class="bi bi-file-earmark-text me-2"></i>Biểu mẫu cho sinh viên</a></li>
-                            <li><a class="dropdown-item" href="https://drive.google.com/drive/folders/1m0knxZO_grEEt3bDSLmATW5cTu2Bhzv5" target="_blank"><i class="bi bi-file-earmark-text me-2"></i>Biểu mẫu cho giảng viên</a></li>
+                            <li><a class="dropdown-item"
+                                    href="https://drive.google.com/drive/folders/1mSIO416XjD_t_J3RVunTQWK2qB4kRvNn"
+                                    target="_blank"><i class="bi bi-file-earmark-text me-2"></i>Biểu mẫu cho sinh
+                                    viên</a></li>
+                            <li><a class="dropdown-item"
+                                    href="https://drive.google.com/drive/folders/1m0knxZO_grEEt3bDSLmATW5cTu2Bhzv5"
+                                    target="_blank"><i class="bi bi-file-earmark-text me-2"></i>Biểu mẫu cho giảng
+                                    viên</a></li>
                         </ul>
                     </li>
                     <li><a href="auth/login.php" class="login-btn"><i class="bi bi-box-arrow-in-right"></i> Đăng
@@ -660,22 +673,73 @@ function buildFilterUrl($newParams = [])
                     </div>
                     <div class="card-body">
                         <div class="row mb-3">
-                            <div class="col-md-4 mb-2">
-                                <strong><i class="bi bi-people text-primary"></i> Số lượng còn:</strong>
-                                <?= $dt['con_lai'] ?> / <?= $dt['so_luong_sv'] ?> sinh viên
+                            <div class="col-md-6 mb-2">
+                                <strong>Số lượng còn:</strong>
+                                <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3 py-1 fw-bold">
+                                    <?= $dt['con_lai'] ?> / <?= $dt['so_luong_sv'] ?> chỗ
+                                </span>
                             </div>
-                            <div class="col-md-4 mb-2">
-                                <strong><i class="bi bi-envelope text-primary"></i> Email:</strong>
-                                <?= htmlspecialchars($dt['email_giang_vien']) ?>
+                            <div class="col-md-6 mb-2">
+                                <strong>Email Giảng viên:</strong>
+                                <a href="mailto:<?= htmlspecialchars($dt['email_giang_vien']) ?>" class="text-decoration-none fw-semibold">
+                                    <?= htmlspecialchars($dt['email_giang_vien']) ?>
+                                </a>
                             </div>
                         </div>
+
+                        <!-- Mô tả đề tài -->
                         <?php if (!empty($dt['mo_ta'])): ?>
-                            <p class="card-text" style="margin-bottom: 15px;"><?= htmlspecialchars($dt['mo_ta']) ?></p>
+                            <div class="mb-3">
+                                <strong class="d-block mb-1 text-secondary">
+                                    Mô tả đề tài:
+                                </strong>
+                                <div class="p-3 bg-light rounded-3 border-start border-4 border-primary fs-6" style="white-space: pre-line;">
+                                    <?= htmlspecialchars($dt['mo_ta']) ?>
+                                </div>
+                            </div>
                         <?php endif; ?>
+
+                        <!-- Công nghệ sử dụng -->
+                        <?php if (!empty($dt['cong_nghe'])): ?>
+                            <div class="mb-3">
+                                <strong class="d-block mb-1 text-secondary">
+                                    Công nghệ sử dụng:
+                                </strong>
+                                <div>
+                                    <?php 
+                                    $congNghes = array_map('trim', explode(',', $dt['cong_nghe']));
+                                    foreach ($congNghes as $cn):
+                                        if (empty($cn)) continue;
+                                    ?>
+                                        <span class="badge bg-primary-subtle text-primary border border-primary-subtle me-1 mb-1 px-3 py-2 rounded-pill fs-7">
+                                            <?= htmlspecialchars($cn) ?>
+                                        </span>
+                                    <?php endforeach; ?>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+
+                        <!-- Yêu cầu sinh viên -->
                         <?php if (!empty($dt['yeu_cau_sinh_vien'])): ?>
-                            <div class="alert alert-info" style="border-radius: 10px; margin-bottom: 0;">
-                                <strong><i class="bi bi-info-circle"></i> Yêu cầu:</strong><br>
-                                <?= htmlspecialchars($dt['yeu_cau_sinh_vien']) ?>
+                            <div class="mb-3">
+                                <strong class="d-block mb-1 text-secondary">
+                                    Yêu cầu sinh viên:
+                                </strong>
+                                <div class="alert alert-info border-0 rounded-3 mb-0" style="background-color: rgba(13, 202, 240, 0.08); color: #055160;">
+                                    <?= htmlspecialchars($dt['yeu_cau_sinh_vien']) ?>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+
+                        <!-- Ghi chú -->
+                        <?php if (!empty($dt['ghi_chu'])): ?>
+                            <div class="mb-0">
+                                <strong class="d-block mb-1 text-secondary">
+                                    Ghi chú:
+                                </strong>
+                                <div class="alert alert-warning border-0 rounded-3 mb-0" style="background-color: rgba(255, 193, 7, 0.08); color: #664d03;">
+                                    <?= htmlspecialchars($dt['ghi_chu']) ?>
+                                </div>
                             </div>
                         <?php endif; ?>
                     </div>

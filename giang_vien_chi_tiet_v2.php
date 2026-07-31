@@ -63,8 +63,17 @@ try {
         <meta charset="UTF-8">
         <title>Lỗi Database</title>
         <style>
-            body { font-family: Arial, sans-serif; margin: 40px; }
-            .error { background: #f8d7da; color: #721c24; padding: 20px; border-radius: 5px; }
+            body {
+                font-family: Arial, sans-serif;
+                margin: 40px;
+            }
+
+            .error {
+                background: #f8d7da;
+                color: #721c24;
+                padding: 20px;
+                border-radius: 5px;
+            }
         </style>
     </head>
 
@@ -107,23 +116,23 @@ if (!$nguoiDung) {
 
     // Dựng $nguoiDung giả từ faculty_members để trang vẫn hiển thị
     $nguoiDung = [
-        'id'      => null,
-        'ho_ten'  => $foundInFaculty['name'],
-        'email'   => $foundInFaculty['email'],
+        'id' => null,
+        'ho_ten' => $foundInFaculty['name'],
+        'email' => $foundInFaculty['email'],
         'vai_tro' => 'giang_vien',
     ];
     // Dựng $giangVien giả
     $giangVien = [
-        'id'            => null,
+        'id' => null,
         'nguoi_dung_id' => null,
-        'khoa'          => $foundInFaculty['khoa'] ?? '',
+        'khoa' => $foundInFaculty['khoa'] ?? '',
         'so_dien_thoai' => $foundInFaculty['phone'] ?? '',
-        'chuc_danh'     => $foundInFaculty['position'] ?? '',
-        'avatar'        => null,
+        'chuc_danh' => $foundInFaculty['position'] ?? '',
+        'avatar' => null,
     ];
     $danhSachDeTai = [];
-    $tatCaDeTai    = [];
-    $thongKe = ['tong'=>0,'nhap'=>0,'cho_duyet'=>0,'da_duyet'=>0,'tu_choi'=>0,'co_so_nganh'=>0,'chuyen_nganh'=>0];
+    $tatCaDeTai = [];
+    $thongKe = ['tong' => 0, 'nhap' => 0, 'cho_duyet' => 0, 'da_duyet' => 0, 'tu_choi' => 0, 'co_so_nganh' => 0, 'chuyen_nganh' => 0];
 } else {
     // Tìm thông tin giảng viên
     $stmt = $pdo->prepare("SELECT * FROM giang_vien WHERE nguoi_dung_id = ?");
@@ -242,6 +251,12 @@ foreach ($tatCaDeTai as $dt) {
     </style>
 
     <style>
+        /* ============ GOOGLE FONTS ============ */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        * { font-family: 'Inter', 'Segoe UI', sans-serif; }
+
+        /* ============ HERO PROFILE HEADER ============ */
         .profile-header {
             background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
             color: white;
@@ -785,7 +800,7 @@ foreach ($tatCaDeTai as $dt) {
 
                                         <div class="row mb-3">
                                             <div class="col-md-4">
-                                                <strong><i class="bi bi-diagram-3"></i> Hệ đào tạo:</strong><br>
+                                                <strong><i class="bi bi-diagram-3"></i> Loại đề tài:</strong><br>
                                                 <span
                                                     class="badge <?= $deTai['he_dao_tao'] === 'co_so_nganh' ? 'bg-primary' : 'bg-success' ?>">
                                                     <?= $deTai['he_dao_tao'] === 'co_so_nganh' ? 'Cơ sở ngành' : 'Chuyên ngành' ?>

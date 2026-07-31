@@ -22,11 +22,11 @@ if ($isInfinityFree) {
     // =============================================
     // ⚠️ HOSTING INFINITYFREE - Cấu hình production
     // =============================================
-    define('DB_HOST', 'sql301.infinityfree.com');
+    define('DB_HOST', 'sql309.infinityfree.com');
     define('DB_PORT', '3306');
-    define('DB_NAME', 'if0_42542434_qldt_database');
-    define('DB_USER', 'if0_42542434');
-    define('DB_PASS', '12345lamnhathao'); // ← THAY MẬT KHẨU VÀO ĐÂY
+    define('DB_NAME', 'if0_42542969_qldt_database');
+    define('DB_USER', 'if0_42542969');
+    define('DB_PASS', 'thachkongsaoane');
     define('DB_CHARSET', 'utf8mb4');
 } else {
     // =============================================
